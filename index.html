@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>V-22 Osprey Flight Simulator</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #canvas-container { width: 100vw; height: 100vh; }
+        #ui { position: absolute; top: 10px; left: 10px; color: white; font-family: sans-serif; background: rgba(0,0,0,0.5); padding: 10px; }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <h3>V-22 機動シミュレーター</h3>
+        <p>Shift/Ctrl: 出力 | W/S: ピッチ | A/D: ロール</p>
+        <p><b>Vキー: ヘリモード (垂直)</b></p>
+        <p><b>Fキー: 固定翼モード (水平)</b></p>
+    </div>
+    <div id="canvas-container"></div>
+
+    <script type="module">
+        import { V22Simulator } from './v22-simulator.ts';
+        new V22Simulator('canvas-container');
+    </script>
+</body>
+</html>
